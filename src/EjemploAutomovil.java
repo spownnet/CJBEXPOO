@@ -1,20 +1,21 @@
 import java.util.Date;
+import java.util.Objects;
 
 public class EjemploAutomovil {
         public static void main(String[] args) {
 
                 Date fecha= new Date();
                 //instanciamos el objeto
-                Automovil chevrolet = new Automovil("DMS", "Chevrolet", "Negro", 1.8f);
+                Automovil chevrolet = new Automovil("DMS", "Chevrolet", Color.NEGRO, 1.8f);
 
 //                chevrolet.setCilindrada(1.8);
 //                chevrolet.setModelo("Chevrolet");
 //                chevrolet.setFabricante("DMG");
 
-                Automovil mazda = new Automovil("Mazda","Sorento","Negro", 2.2f);
+                Automovil mazda = new Automovil("Mazda","Sorento",Color.NEGRO, 2.2f);
 
-                Automovil nissan = new Automovil("Nissan","QuiashQai", "Rojo", 2.0f, 30);
-                Automovil nissan2 = new Automovil("Nissan","QuiashQai", "Rojo", 2.0f, 30);
+                Automovil nissan = new Automovil("Nissan","QuiashQai", Color.ROJO, 2.0f, 30);
+                Automovil nissan2 = new Automovil("Nissan","QuiashQai", Color.AZUL, 2.0f, 30);
                 Automovil auto = new Automovil();
 //                mazda.setCilindrada(2.2);
 //                mazda.setModelo("Sorento");
@@ -27,7 +28,7 @@ public class EjemploAutomovil {
                 System.out.println(chevrolet.detalle());
                 System.out.println();
                 System.out.print("Datos del Segundo Objecto: Mazda = ");
-                System.out.println(mazda.toString());
+                System.out.println(mazda);
                 System.out.println(mazda.detalle());
                 System.out.println();
                 System.out.println("Datos del Segundo Objecto: Nissan");
@@ -37,7 +38,7 @@ public class EjemploAutomovil {
                 System.out.println("Son iguales los objetos nissan al compararlo con el operador == ? " + (nissan == nissan2));
                 System.out.println("Son iguales los objetos nissan al compararlo con el metodo equals ? " + (nissan.equals(nissan2)));
                 System.out.println("Son iguales los objetos comparado auto vs nissan2 al compararlo con el metodo equals ? " + (auto.equals(nissan)));
-                System.out.println("Son iguales los objetos comparado auto vs fecha al compararlo con el metodo equals ? " + (auto.equals(fecha)));
+                System.out.println(new StringBuilder().append("Son iguales los objetos comparado auto vs fecha al compararlo con el metodo equals ? ").append(auto.equals(fecha)).toString());
 
                 //Mostrando metodo acelerando / frenando
                 System.out.println("mazda.acelerar(100) = " + mazda.acelerarFrenar(100));
