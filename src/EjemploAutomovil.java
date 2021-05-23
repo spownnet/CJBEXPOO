@@ -1,26 +1,28 @@
 import java.util.Date;
-import java.util.Objects;
 
 public class EjemploAutomovil {
         public static void main(String[] args) {
 
                 Date fecha= new Date();
                 //instanciamos el objeto
-                Automovil chevrolet = new Automovil("DMS", "Chevrolet", Color.NEGRO, 1.8f);
+                Motor motorChevrolet = new Motor(1.8f,TipoMotor.GASOLINA);
+                Automovil chevrolet = new Automovil("DMS", "Chevrolet", Color.NEGRO, motorChevrolet);
 
 //                chevrolet.setCilindrada(1.8);
 //                chevrolet.setModelo("Chevrolet");
 //                chevrolet.setFabricante("DMG");
 
-                Automovil mazda = new Automovil("Mazda","Sorento",Color.NEGRO, 2.2f);
+                Motor motorMazda = new Motor(1.6f,TipoMotor.GASOLINA);
+                Automovil mazda = new Automovil("Mazda","Sorento",Color.NEGRO, motorMazda);
 
-                Automovil nissan = new Automovil("Nissan","QuiashQai", Color.ROJO, 2.0f, 30);
-                Automovil nissan2 = new Automovil("Nissan","QuiashQai", Color.AZUL, 2.0f, 30);
+                Motor motorNissan = new Motor(2.0f,TipoMotor.DISEL);
+                Estanque estanqueNissan = new Estanque(60);
+                Automovil nissan = new Automovil("Nissan","QuiashQai", Color.ROJO, motorNissan, estanqueNissan);
+
+                Motor motorNissan2 = new Motor(2.1, TipoMotor.GASOLINA);
+                Estanque estanqueNissan2 = new Estanque();
+                Automovil nissan2 = new Automovil("Nissan","QuiashQai", Color.AZUL, motorNissan2, estanqueNissan2);
                 Automovil auto = new Automovil();
-//                mazda.setCilindrada(2.2);
-//                mazda.setModelo("Sorento");
-//                mazda.setColor("Negro");
-//                mazda.setFabricante("Mazda");
 
                 //Imprimiendo primero objeto
                 System.out.print("Datos del Primer Objecto: Chevrolet = ");
@@ -35,10 +37,10 @@ public class EjemploAutomovil {
                 System.out.println(nissan.detalle());
 
                 //Comparacion de Objetos
-                System.out.println("Son iguales los objetos nissan al compararlo con el operador == ? " + (nissan == nissan2));
+                System.out.println("Son iguales los objetos nissan al compararlo con el operador == ? " + (nissan.equals(nissan2)));
                 System.out.println("Son iguales los objetos nissan al compararlo con el metodo equals ? " + (nissan.equals(nissan2)));
                 System.out.println("Son iguales los objetos comparado auto vs nissan2 al compararlo con el metodo equals ? " + (auto.equals(nissan)));
-                System.out.println(new StringBuilder().append("Son iguales los objetos comparado auto vs fecha al compararlo con el metodo equals ? ").append(auto.equals(fecha)).toString());
+                System.out.println("Son iguales los objetos comparado auto vs fecha al compararlo con el metodo equals ? " + auto.equals(fecha));
 
                 //Mostrando metodo acelerando / frenando
                 System.out.println("mazda.acelerar(100) = " + mazda.acelerarFrenar(100));

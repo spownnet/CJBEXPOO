@@ -1,5 +1,6 @@
 public enum TipoMotor {
-        DISEL("Disel"), GASOLINA("Gasolina");
+        DISEL("Disel"),
+        GASOLINA("Gasolina");
 
         public final String tipo;
 

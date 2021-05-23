@@ -1,23 +1,22 @@
-import java.util.Date;
+
 
 public class EjemploAutomovilEnum {
         public static void main(String[] args) {
 
-                Date fecha= new Date();
                 //instanciamos el objeto
-                Automovil chevrolet = new Automovil("DMS", "Chevrolet", Color.AZUL, 1.8f);
+                Automovil chevrolet = new Automovil("DMS", "Chevrolet", Color.AZUL, new Motor(1.8f,TipoMotor.GASOLINA));
                 chevrolet.setTipo(TipoAutomovil.STATION_WAGON);
 
-                Automovil mazda = new Automovil("Mazda","Sorento",Color.ROJO, 2.2f);
+                Automovil mazda = new Automovil("Mazda","Sorento",Color.ROJO, new Motor(2.1f, TipoMotor.DISEL));
                 mazda.setTipo(TipoAutomovil.SEDAN);
 
                 //Modificar el atributo Static
                 //Desde otra clase
                 Automovil.setColorPatente(Color.VERDE);
 
-                Automovil nissan = new Automovil("Nissan","QuiashQai", Color.BLANCO, 2.0f, 30);
+                Automovil nissan = new Automovil("Nissan","QuiashQai", Color.BLANCO, new Motor(1.6f,TipoMotor.GASOLINA), new Estanque(30));
                 nissan.setTipo(TipoAutomovil.STATION_WAGON);
-                Automovil nissan2 = new Automovil("Nissan","QuiashQai", Color.GRIS, 2.0f, 30);
+                Automovil nissan2 = new Automovil("Nissan","QuiashQai", Color.GRIS, new Motor(1.5f, TipoMotor.GASOLINA), new Estanque(30));
                 nissan2.setTipo(TipoAutomovil.HATCHBACK);
                 Automovil auto = new Automovil();
                 auto.setTipo(TipoAutomovil.PICKUP);
@@ -28,7 +27,7 @@ public class EjemploAutomovilEnum {
                 System.out.println(chevrolet.detalle());
                 System.out.println();
                 System.out.print("Datos del Segundo Objecto: Mazda = ");
-                System.out.println(mazda.toString());
+                System.out.println(mazda);
                 System.out.println(mazda.detalle());
                 System.out.println();
                 System.out.println("Datos del Segundo Objecto: Nissan");
